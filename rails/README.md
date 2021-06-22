@@ -31,5 +31,5 @@
   
 # DDD
 
-- Use `Vendor::LegalDataRepository` over `Repository::Vendor::LegalDataRepository`
+- Use `Vendor::LegalDataRepository` instead of `Repository::Vendor::LegalDataRepository`
   or `Repository::VendorLegalData`.
