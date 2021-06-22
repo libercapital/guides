@@ -25,5 +25,5 @@ programming in style.
 - [HTML](/html/)
 - [JavaScript](/javascript/)
 - [Python](/python/)
-- [Ruby](/ruby/)
 - [Rails](/rails/)
+- [Ruby](/ruby/)
