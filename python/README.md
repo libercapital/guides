@@ -1,3 +1,4 @@
 # Python
 
-- Use `logger.info("Minha msg %s %s %s" , var1, var2, var3)` or `logger.debug("Minha msg {} {} {}", var1, var2, var3)` to log.
+- Use `logger.info("Msg %s %s" , var1, var2)`, `logger.debug("Msg {} {}", var1, var2)` or
+  `logger.info("Msg {var1} {var2}", var1=var1, var2=var2)` to log.
