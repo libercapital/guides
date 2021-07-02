@@ -1,0 +1,824 @@
+require:
+  - rubocop-rspec
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-rake
+
+AllCops:
+  DisplayCopNames: true
+  EnabledByDefault: true
+  TargetRubyVersion: 2.6.5
+  Exclude:
+    - 'app/views/**/*'
+    - 'bin/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'vendor/bundle/**/*'
+    - 'node_modules/**/*'
+    - !ruby/regexp /old_and_unused\.rb$/
+
+Rails:
+  Enabled: true
+
+Metrics/MethodLength:
+  Max: 50
+
+Layout/LineLength:
+  Max: 120
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
+    - staging
+
+
+#################
+# DISABLED COPS #
+#################
+
+# disabled this cop because of a bug when generating the rubocop_todo file again
+# TODO, discuss about this cop again in the future
+RSpec/BeforeAfterAll:
+  Description: "Check that before/after(:all) isn't being used."
+  Enabled: false
+
+# disabled because of cop conflicts
+Lint/RedundantCopDisableDirective:
+  Description: "Checks for rubocop:disable comments that can be removed. Note: this cop is not disabled when disabling all cops. It must be explicitly disabled."
+  Enabled: false
+
+Layout/FirstMethodParameterLineBreak:
+  Description: "Checks for a line break before the first parameter in a multi-line method parameter definition."
+  Enabled: false
+
+Style/MultilineTernaryOperator:
+  Description: "Avoid multi-line ?: (the ternary operator); use if/unless instead."
+  Enabled: false
+
+Style/MissingElse:
+  Description: >-
+                 Require if/case expressions to have an else branches.
+                 If enabled, it is recommended that Style/UnlessElse and Style/EmptyElse be enabled.
+                 This will conflict with Style/EmptyElse if Style/EmptyElse is configured to style 'both'.
+  Enabled: false
+
+Style/Copyright:
+  Description: 'Include a copyright notice in each file before any code.'
+  Enabled: false
+
+Style/ConstantVisibility:
+  Description: "Check that class- and module constants have visibility declarations."
+  Enabled: false
+
+Style/DocumentationMethod:
+  Description: 'Checks for missing documentation comment for public methods.'
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Description: "Add the frozen_string_literal comment to the top of files to help transition to frozen string literals by default."
+  Enabled: false
+
+RSpec/AlignRightLetBrace:
+  Description: "Even spaces between {} across multiple lines"
+  Enabled: false
+
+Lint/NumberConversion:
+  Description: 'Checks unsafe usage of number conversion methods.'
+  Enabled: false
+
+Layout/MultilineAssignmentLayout:
+  Description: 'Check for a newline after the assignment operator in multi-line assignments.'
+  Enabled: false
+
+Style/AndOr:
+  Description: 'Use &&/|| instead of and/or.'
+  Enabled: false
+
+Style/Documentation:
+  Description: 'Document classes and non-namespace modules.'
+  Enabled: false
+
+Rails/ApplicationController:
+  Description: 'Check that controllers subclass ApplicationController.'
+  Enabled: false
+
+RSpec/ExampleLength:
+  Description: 'A long example is usually more difficult to understand.'
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Description: 'Checks if examples contain too many `expect` calls.'
+  Enabled: false
+
+Lint/ConstantResolution:
+  Description: 'Check that certain constants are fully qualified.'
+  Enabled: false
+
+Rails/PluckId:
+  Description: 'Use `ids` instead of `pluck(:id)` or `pluck(primary_key)`.'
+  Enabled: false
+
+Style/ClassMethodsDefinitions:
+  Description: 'Enforces using `def self.method_name` or `class << self` to define class methods.'
+  Enabled: false
+
+Style/InlineComment:
+  Description: 'Avoid trailing inline comments.'
+  Enabled: false
+
+Style/OptionalBooleanParameter:
+  Description: 'Use keyword arguments when defining method with boolean argument.'
+  Enabled: false
+
+#################
+#  ENABLED COPS #
+#################
+
+Style/DisableCopsWithinSourceCodeDirective:
+  Description: "Forbids disabling/enabling cops within source code."
+  AllowedCops:
+    - 'RSpec/BeforeAfterAll'
+    - 'Style/Next'
+    - 'Style/Semicolon'
+    - 'Lint/UselessMethodDefinition'
+
+Style/RedundantSort:
+  Description: "Use `min` instead of `sort.first`, `max_by` instead of `sort_by...last`, etc."
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  Description: "Checks that the equals signs in parameter default assignments have or don't have surrounding space depending on configuration."
+
+Layout/AssignmentIndentation:
+  Description: "Checks the indentation of the first line of the right-hand-side of a multi-line assignment."
+
+RSpec/HooksBeforeExamples:
+  Description: "Before/after comes before 'it'"
+
+Rails/RequestReferer:
+  Description: "Uses referer instead of referrer"
+
+Layout/EmptyLinesAroundArguments:
+  Description: "Keeps track of empty lines around method arguments."
+
+Layout/EmptyComment:
+  Description: 'Checks empty comment.'
+
+Lint/NonDeterministicRequireOrder:
+  Description: 'Always sort arrays returned by Dir.glob when requiring files.'
+
+Performance/Count:
+  Description: "Change count on an Enumerable to size"
+
+Performance/InefficientHashSearch:
+  Description: "keys? and value? instead of keys.include? and values.include?"
+
+RSpec/EmptyLineAfterSubject:
+  Description: "Adds empty line after test subject"
+
+Performance/Size:
+  Description: "Let rails decide when to use count or length based on performance"
+
+Performance/TimesMap:
+  Description: "Checks for .times.map calls"
+
+Style/CommentAnnotation:
+  Description: "Checks formatting of special comments (TODO, FIXME, OPTIMIZE, HACK, REVIEW, NOTE)."
+
+Style/MethodDefParentheses:
+  Description: "Checks if the method definitions have or don't have parentheses."
+
+Style/RedundantConditional:
+  Description: "Don't return true/false from a conditional."
+
+RSpec/Capybara/CurrentPathExpectation:
+  Description: "Use have_current_path"
+
+Layout/InitialIndentation:
+  Description: "Checks the indentation of the first non-blank non-comment line in a file."
+
+RSpec/Capybara/FeatureMethods:
+  Description: "Checks for consistent method usage in feature specs."
+
+Lint/Debugger:
+  Description: 'Check for debugger calls.'
+
+RSpec/Focus:
+  Description: "Run ALL tests on CI"
+
+Rails/Output:
+  Description: "Don't leave puts-debugging"
+
+Rails/FindEach:
+  Description: "each could severely affect the performance, use find_each"
+
+Rails/UniqBeforePluck:
+  Description: "uniq.pluck and not pluck.uniq"
+
+Layout/EmptyLineAfterGuardClause:
+  Description: 'Add empty line after guard clause.'
+
+Layout/ElseAlignment:
+  Description: 'Align elses and elsifs correctly.'
+
+Layout/CommentIndentation:
+  Description: 'Indentation of comments.'
+
+Style/WordArray:
+  Description: 'Use %w or %W for arrays of words.'
+
+Layout/SpaceAfterColon:
+  Description: 'Use spaces after colons.'
+
+Layout/EmptyLineBetweenDefs:
+  Description: 'Use empty lines between class/module/method defs.'
+
+Style/IfUnlessModifier:
+  Description: 'Favor modifier if/unless usage when you have a single-line body.'
+
+Style/StringLiterals:
+  Description: 'Checks if uses of quotes match the configured preference.'
+
+Layout/MultilineMethodArgumentLineBreaks:
+  Description: 'Checks that each argument in a multi-line method call starts on a separate line.'
+
+RSpec/DescribedClass:
+  Description: 'Use described_class in RSpec tests'
+
+Style/NumericLiterals:
+  Description: 'Add underscores to large numeric literals to improve their readability.'
+
+Style/SignalException:
+  Description: 'Checks for proper usage of fail and raise.'
+
+Lint/LiteralInInterpolation:
+  Description: 'Checks for literals used in interpolation.'
+
+Style/EmptyCaseCondition:
+  Description: 'Avoid empty condition in case statements.'
+
+Style/Alias:
+  Description: 'Use alias instead of alias_method.'
+
+Rails/ReadWriteAttribute:
+  Description: "Checks for read_attribute(:attr) and write_attribute(:attr, val)."
+
+Rails/DynamicFindBy:
+  Description: 'Use `find_by` instead of dynamic `find_by_*`.'
+
+Performance/StringReplacement:
+  Description: "Use `tr` instead of `gsub` when you are replacing the same number of characters. Use `delete` instead of `gsub` when you are deleting characters."
+
+Performance/Casecmp:
+  Description: "Use `casecmp` rather than `downcase ==`, `upcase ==`, `== downcase`, or `== upcase`.."
+
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Description: 'No unnecessary spaces inside delimiters of %i/%w/%x literals.'
+
+Layout/SpaceAroundKeyword:
+  Description: 'Add space around key words'
+
+Layout/ArrayAlignment:
+  Description: 'Align the elements of an array literal if they span more than one line.'
+
+Layout/AccessModifierIndentation:
+  Description: 'Check indentation of private/protected visibility modifiers.'
+
+  Exclude: [
+    'app/presenters/admins/investidores/proposta_show_presenter.rb',
+    'app/controllers/devize/passwords_controller.rb'
+  ]
+
+Layout/MultilineHashBraceLayout:
+  Description: 'Checks that the closing brace in a hash literal is either on the same line as the last hash element, or a new line.'
+
+Layout/EmptyLinesAroundModuleBody:
+  Description: 'Keeps track of empty lines around module bodies.'
+  EnforcedStyle: no_empty_lines
+
+Style/EmptyLiteral:
+  Description: 'Prefer literals to Array.new/Hash.new/String.new.'
+
+Style/ExpandPathArguments:
+  Description: "Use `expand_path(__dir__)` instead of `expand_path('..', __FILE__)`."
+
+Style/TernaryParentheses:
+  Description: 'Checks for use of parentheses around ternary conditions.'
+
+Layout/SpaceBeforeFirstArg:
+  Description: 'Checks that exactly one space is used between a method name and the first argument for method calls without parentheses.'
+
+Style/Semicolon:
+  Description: "Don't use semicolons to terminate expressions."
+
+Style/TrivialAccessors:
+  Description: 'Prefer attr_* methods to trivial readers/writers.'
+
+Style/NumericLiteralPrefix:
+  Description: 'Use smallcase prefixes for numeric literals.'
+  EnforcedOctalStyle: zero_only
+
+Layout/EndAlignment:
+  Description: 'Align ends correctly.'
+
+Layout/ClassStructure:
+  Description: 'Enforces a configured order of definitions within a class body.'
+
+Lint/SafeNavigationConsistency:
+  Description: "Check to make sure that if safe navigation is used for a method call in an `&&` or `||` condition that safe navigation is used for all method calls on that same object."
+
+Style/FormatString:
+  Description: 'Enforce the use of Kernel#sprintf, Kernel#format or String#%.'
+
+Style/ZeroLengthPredicate:
+  Description: 'Use #empty? when testing for objects of length 0.'
+
+Style/InverseMethods:
+  Description: "Use the inverse method instead of `!.method` if an inverse method is defined."
+
+Style/MethodCallWithoutArgsParentheses:
+  Description: 'Do not use parentheses for method calls with no arguments.'
+
+Style/RedundantException:
+  Description: "Checks for an obsolete RuntimeException argument in raise/fail."
+
+Layout/LeadingEmptyLines:
+  Description: "Check for unnecessary blank lines at the beginning of a file."
+
+Style/NilComparison:
+  Description: 'Prefer x.nil? to x == nil.'
+
+Performance/ReverseEach:
+  Description: 'Use `reverse_each` instead of `reverse.each`.'
+
+Rails/HttpStatus:
+  Description: 'Enforces use of symbolic or numeric value to define HTTP status.'
+
+Layout/SpaceBeforeComment:
+  Description: "Checks for missing space between code and a comment on the same line."
+
+Performance/RedundantMerge:
+  Description: 'Use Hash#[]=, rather than Hash#merge! with a single key-value pair.'
+
+RSpec/EmptyLineAfterExampleGroup:
+  Description: "Checks if there is an empty line after example group blocks."
+
+Rails/Present:
+  Description: 'Enforces use of `present?`.'
+
+Style/CollectionMethods:
+  Description: 'Preferred collection methods.'
+
+Style/LineEndConcatenation:
+  Description: "Use \ instead of + or << to concatenate two string literals at line end."
+
+Rails/Delegate:
+  Description: 'Prefer delegate method for delegations.'
+
+Layout/BlockEndNewline:
+  Description: 'Put end statement of multiline block on its own line.'
+
+Style/RaiseArgs:
+  Description: 'Checks the arguments passed to raise/fail.'
+  EnforcedStyle: compact
+
+Style/RedundantCondition:
+  Description: 'Checks for unnecessary conditional expressions.'
+
+Style/UnlessElse:
+  Description: "Do not use unless with else. Rewrite these with the positive case first."
+
+Style/TrailingCommaInArrayLiteral:
+  Description: 'Checks for trailing comma in array literals.'
+
+Style/NegatedIf:
+  Description: "Favor unless over if for negative conditions (or control flow or)."
+
+Style/ParenthesesAroundCondition:
+  Description: "Don't use parentheses around the condition of an if/unless/while."
+
+Layout/EmptyLinesAroundAccessModifier:
+  Description: "Keep blank lines around access modifiers."
+
+Lint/RedundantStringCoercion:
+  Description: 'Checks for Object#to_s usage in string interpolation.'
+
+Layout/EmptyLinesAroundExceptionHandlingKeywords:
+  Description: "Keeps track of empty lines around exception handling keywords."
+
+RSpec/BeEql:
+  Description: "Check for expectations where `be(...)` can replace `eql(...)`."
+
+Rails/Presence:
+  Description: 'Checks code that can be written more easily using `Object#presence` defined by Active Support.'
+
+Style/EmptyElse:
+  Description: 'Avoid empty else-clauses.'
+
+Performance/Detect:
+  Description: "Use `detect` instead of `select.first`, `find_all.first`, `filter.first`, `select.last`, `find_all.last`, and `filter.last`."
+
+Style/SingleLineMethods:
+  Description: 'Avoid single-line methods.'
+
+Layout/EmptyLinesAroundMethodBody:
+  Description: "Keeps track of empty lines around method bodies."
+
+RSpec/EmptyLineAfterFinalLet:
+  Description: "Checks if there is an empty line after the last let block."
+
+Layout/ClosingParenthesisIndentation:
+  Description: 'Checks the indentation of hanging closing parentheses.'
+
+Style/PercentLiteralDelimiters:
+  Description: 'Use `%`-literal delimiters consistently.'
+
+Rails/PluralizationGrammar:
+  Description: 'Checks for incorrect grammar when using methods like `3.day.ago`.'
+
+Rails/EnumHash:
+  Description: 'Prefer hash syntax over array syntax when defining enums.'
+
+Style/ConditionalAssignment:
+  Description: "Use the return value of `if` and `case` statements for assignment to a variable and variable comparison instead of assigning that variable inside of each branch."
+
+Style/EmptyMethod:
+  Description: 'Checks the formatting of empty method definitions.'
+
+Layout/BlockAlignment:
+  Description: 'Align block ends correctly.'
+
+Style/TrailingCommaInArguments:
+  Description: 'Checks for trailing comma in argument lists.'
+
+Style/Encoding:
+  Description: 'Use UTF-8 as the source file encoding.'
+
+Layout/MultilineBlockLayout:
+  Description: 'Ensures newlines after multiline block do statements.'
+
+Layout/IndentationWidth:
+  Description: 'Use 2 spaces for indentation.'
+
+Style/MutableConstant:
+  Description: 'Do not assign mutable objects to constants.'
+
+RSpec/PredicateMatcher:
+  Description: "Prefer using predicate matcher over using predicate method directly."
+
+RSpec/ContextMethod:
+  Description: "`context` should not be used for specifying methods."
+
+Rails/TimeZone:
+  Description: 'Checks the correct usage of time zone aware methods.'
+
+Lint/UnusedMethodArgument:
+  Description: 'Checks for unused method arguments.'
+
+Style/Next:
+  Description: 'Use `next` to skip iteration instead of a condition at the end.'
+
+Rails/ActiveRecordAliases:
+  Description: "Avoid Active Record aliases: Use `update` instead of `update_attributes`. Use `update!` instead of `update_attributes!`."
+
+Layout/FirstArgumentIndentation:
+  Description: 'Checks the indentation of the first argument in a method call.'
+
+Layout/IndentationConsistency:
+  Description: 'Keep indentation straight.'
+
+Layout/EmptyLineAfterMagicComment:
+  Description: 'Add an empty line after magic comments to separate them from code.'
+
+Layout/MultilineOperationIndentation:
+  Description: "Checks indentation of binary operations that span more than one line."
+
+RSpec/EmptyLineAfterExample:
+  Description: "Checks if there is an empty line after example blocks."
+
+Layout/DotPosition:
+  Description: 'Checks the position of the dot in multi-line method calls.'
+
+RSpec/ExpectChange:
+  Description: "Checks for consistent style of change matcher."
+  EnforcedStyle: block
+
+Style/RedundantBegin:
+  Description: "Don't use begin blocks when they are not needed."
+
+Style/SafeNavigation:
+  Description: "This cop transforms usages of a method call safeguarded by a check for the existence of the object to safe navigation (`&.`). Auto-correction is unsafe as it assumes the object will be `nil` or truthy, but never `false`."
+
+Layout/MultilineMethodCallBraceLayout:
+  Description: "Checks that the closing brace in a method call is either on the same line as the last method argument, or a new line."
+
+Style/ExplicitBlockArgument:
+  Description: "Consider using explicit block argument to avoid writing block literal that just passes its arguments to another block."
+
+Lint/UselessMethodDefinition:
+  Description: 'Checks for useless method definitions.'
+
+Layout/FirstArrayElementIndentation:
+  Description: "Checks the indentation of the first element in an array literal."
+
+Style/DoubleNegation:
+  Description: "Checks for uses of double negation (!!)."
+
+Rails/RakeEnvironment:
+  Description: 'Include `:environment` as a dependency for all Rake tasks.'
+  Exclude:
+    - lib/tasks/development/coverage_report.rake
+
+Performance/Caller:
+  Description: "Use `caller(n..n)` instead of `caller`."
+
+Lint/Loop:
+  Description: "Use Kernel#loop with break rather than begin/end/until or begin/end/while for post-loop tests."
+
+Style/CommentedKeyword:
+  Description: 'Do not place comments on the same line as certain keywords.'
+
+RSpec/EmptyHook:
+  Description: "Checks for empty before and after hooks."
+
+Style/MultipleComparison:
+  Description: "This cop checks against comparing a variable with multiple items, where `Array#include?`, `Set#include?` or a `case` could be used instead to avoid code repetition."
+
+Lint/DeprecatedOpenSSLConstant:
+  Description: "Algorithmic constants for OpenSSL::Cipher and OpenSSL::Digest deprecated since OpenSSL version 2.2.0. Prefer passing a string instead."
+
+Lint/AmbiguousOperator:
+  Description: "This cop checks for ambiguous operators in the first argument of a method invocation without parentheses."
+
+Layout/EmptyLineAfterMultilineCondition:
+  Description: "This cop enforces empty line after multiline condition."
+
+Rails/WhereNot:
+  Description: "This cop identifies places where manually constructed SQL in where can be replaced with where.not(…)."
+
+Lint/AmbiguousRegexpLiteral:
+  Description: "Checks for ambiguous regexp literals in the first argument of a method invocation without parentheses."
+
+Layout/SpaceAroundMethodCallOperator:
+  Description: 'Checks method call operators to not have spaces around them.'
+
+Style/IfInsideElse:
+  Description: 'Finds if nodes inside else, which can be converted to elsif.'
+
+Lint/UselessAccessModifier:
+  Description: 'Checks for useless access modifiers.'
+
+Style/IfWithBooleanLiteralBranches:
+  Description: 'Access modifiers should be declared to apply to a group of methods or inline before each method'
+
+Rails/WhereEquals:
+  Description: 'Pass conditions to `where` as a hash instead of manually constructing SQL.'
+
+Rails/ActiveRecordCallbacksOrder:
+  Description: 'Order callback declarations in the order in which they will be executed.'
+
+Style/StructInheritance:
+  Description: 'Checks for inheritance from Struct.new.'
+
+Rails/WhereExists:
+  Description: 'Prefer `exists?(...)` over `where(...).exists?`.'
+
+Style/RedundantRegexpEscape:
+  Description: "Checks for redundant escapes in Regexps."
+
+Style/NegatedIfElseCondition:
+  Description: "This cop checks for uses of `if-else` and ternary operators with a negated condition which can be simplified by inverting condition and swapping branches."
+
+Style/ArrayCoercion:
+  Description: "Use Array() instead of explicit Array check or [*var], when dealing with a variable you want to treat as an Array, but you're not certain it's an array."
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Description: "Keep blank lines around attribute accessors."
+
+Style/SlicingWithRange:
+  Description: "Checks array slicing is done with endless ranges when suitable."
+
+Rails/NegateInclude:
+  Description: "Prefer `collection.exclude?(obj)` over `!collection.include?(obj)`."
+
+Style/SingleArgumentDig:
+  Description: 'Avoid using single argument dig method.'
+
+Style/CaseEquality:
+  Description: 'Avoid explicit use of the case equality operator(===).'
+
+Style/DefWithParentheses:
+  Description: 'Use def with parentheses when there are arguments.'
+
+Rails/ShortI18n:
+  Description: 'Use the short form of the I18n methods: `t` instead of `translate` and `l` instead of `localize`.'
+
+Style/RedundantAssignment:
+  Description: 'Checks for redundant assignment before returning.'
+
+Layout/FirstHashElementIndentation:
+  Description: 'Checks the indentation of the first key in a hash literal.'
+
+Layout/MultilineArrayLineBreaks:
+  Description: "Checks that each item in a multi-line array literal starts on a separate line."
+
+Style/RedundantArgument:
+  Description: 'Check for a redundant argument passed to certain methods.'
+
+Style/ClassEqualityComparison:
+  Description: 'Enforces the use of `Object#instance_of?` instead of class comparison for equality.'
+
+Style/SoleNestedConditional:
+  Description: "Finds sole nested conditional nodes which can be merged into outer conditional node."
+
+Lint/ParenthesesAsGroupedExpression:
+  Description: "Checks for method calls with a space before the opening parenthesis."
+
+Style/HashAsLastArrayItem:
+  Description: "Checks for presence or absence of braces around hash literal as a last array item depending on configuration."
+
+Layout/FirstHashElementLineBreak:
+  Description: "Checks for a line break before the first element in a multi-line hash."
+
+Style/CaseLikeIf:
+  Description: 'This cop identifies places where `if-elsif` constructions can be replaced with `case-when`.'
+
+Style/RedundantRegexpCharacterClass:
+  Description: "Checks for unnecessary single-element Regexp character classes."
+
+Style/RedundantSelf:
+  Description: "Don't use self where it's not needed."
+
+Style/MultilineIfModifier:
+  Description: 'Only use if/unless modifiers on single line statements.'
+
+RSpec/ReturnFromStub:
+  Description: "Checks for consistent style of stub's return setting."
+
+Layout/SpaceAfterComma:
+  Description: 'Use spaces after commas.'
+
+Style/SymbolProc:
+  Description: 'Use symbols as procs instead of blocks when possible.'
+
+Rails/Pluck:
+  Description: 'Prefer `pluck` over `map { ... }`.'
+
+Style/StringLiteralsInInterpolation:
+  Description: "Checks if uses of quotes inside expressions in interpolated strings match the configured preference."
+
+Style/DateTime:
+  Description: 'This cop checks for consistent usage of the DateTime class over the Time class'
+
+Layout/SpaceInsideStringInterpolation:
+  Description: 'Checks for padding/surrounding spaces inside string interpolation.'
+
+RSpec/EmptyLineAfterHook:
+  Description: "Checks if there is an empty line after hook blocks."
+
+Style/ReturnNil:
+  Description: 'Use return instead of return nil.'
+
+Layout/SpaceInsideParens:
+  Description: 'No spaces after ( or before ).'
+
+Layout/EmptyLinesAroundClassBody:
+  Description: "Keeps track of empty lines around class bodies."
+
+Layout/SpaceAroundOperators:
+  Description: 'Use a single space around operators.'
+
+RSpec/Rails/HttpStatus:
+  Description: "Enforces use of symbolic or numeric value to describe HTTP status."
+
+Layout/EmptyLines:
+  Description: "Don't use several empty lines in a row."
+
+Style/RedundantParentheses:
+  Description: "Checks for parentheses that seem not to serve any purpose."
+
+RSpec/ExampleWording:
+  Description: "Checks for common mistakes in example descriptions."
+
+Style/StringConcatenation:
+  Description: 'Checks for places where string concatenation can be replaced with string interpolation.'
+
+RSpec/NotToNot:
+  Description: "Checks for consistent method usage for negating expectations."
+
+Rails/Blank:
+  Description: 'Enforces use of `blank?`.'
+
+Layout/TrailingWhitespace:
+  Description: 'Avoid trailing whitespace.'
+
+Layout/LeadingCommentSpace:
+  Description: 'Comments should start with a space.'
+
+Naming/RescuedExceptionsVariableName:
+  Description: 'Use consistent rescued exceptions variables naming.'
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Description: 'Checks the spacing inside array literal brackets.'
+
+Style/SymbolArray:
+  Description: 'Use %i or %I for arrays of symbols.'
+
+Style/TrailingCommaInHashLiteral:
+  Description: 'Checks for trailing comma in hash literals.'
+
+Layout/ArgumentAlignment:
+  Description: "Align the arguments of a method call if they span more than one line."
+
+Lint/UnusedBlockArgument:
+  Description: 'Checks for unused block arguments.'
+
+Layout/EmptyLinesAroundBlockBody:
+  Description: "Keeps track of empty lines around block bodies."
+
+Layout/ExtraSpacing:
+  Description: 'Do not use unnecessary spacing.'
+
+Layout/SpaceBeforeBlockBraces:
+  Description: "Checks that the left block brace has or doesn't have space before it."
+
+Style/RescueStandardError:
+  Description: 'Avoid rescuing without specifying an error class.'
+
+Layout/MultilineHashKeyLineBreaks:
+  Description: "Checks that each item in a multi-line hash literal starts on a separate line."
+
+Style/BlockDelimiters:
+  Description: "Avoid using {...} for multi-line blocks (multiline chaining is always ugly). Prefer {...} over do...end for single-line blocks."
+
+Layout/SpaceInsideBlockBraces:
+  Description: "Checks that block braces have or don't have surrounding space. For blocks taking parameters, checks that the left brace has or doesn't have trailing space."
+
+Layout/SpaceInsideArrayPercentLiteral:
+  Description: 'No unnecessary additional spaces between elements in %i/%w literals.'
+
+Rails/Validation:
+  Description: 'Use validates :attribute, hash of validations.'
+
+RSpec/ScatteredLet:
+  Description: "Checks for let scattered across the example group."
+
+RSpec/AlignLeftLetBrace:
+  Description: "Checks that left braces for adjacent single line lets are aligned."
+
+Style/AccessorGrouping:
+  Description: 'Checks for grouping of accessors in `class` and `module` bodies.'
+
+Style/RegexpLiteral:
+  Description: "Use / or %r around regular expressions."
+
+Lint/SymbolConversion:
+  Description: 'This cop checks for mistyped shorthand assignments.'
+
+RSpec/FactoryBot/AttributeDefinedStatically:
+  Description: "Always declare attribute values as blocks."
+
+Layout/SpaceInsideHashLiteralBraces:
+  Description: "Use spaces inside hash literal braces - or don't."
+
+Layout/TrailingEmptyLines:
+  Description: 'Checks trailing blank lines and final newline.'
+
+RSpec/HookArgument:
+  Description: "Checks the arguments passed to `before`, `around`, and `after`."
+  EnforcedStyle: each
+
+Layout/HashAlignment:
+  Description: "Align the elements of a hash literal if they span more than one line."
+
+Style/RedundantReturn:
+  Description: "Don't use return where it's not required."
+
+Layout/MultilineMethodCallIndentation:
+  Description: "Checks indentation of method calls with the dot operator that span more than one line."
+
+Layout/SpaceBeforeComma:
+  Description: 'No spaces before commas.'
+
+Performance/Sum:
+  Description: 'Use `sum` instead of a custom array summation.'
+
+Style/MethodCallWithArgsParentheses:
+  Description: 'Use parentheses for method calls with arguments.'
+
+Style/RedundantInterpolation:
+  Description: 'Checks for strings that are just an interpolated expression.'
+
+Style/ClassAndModuleChildren:
+  Description: 'Checks style of children classes and modules.'
+
+Style/SingleLineBlockParams:
+  Description: 'Enforces the names of some block params.'
+
+Style/RedundantFreeze:
+  Description: "Checks usages of Object#freeze on immutable objects."
+
+Layout/FirstMethodArgumentLineBreak:
+  Description: "Checks for a line break before the first argument in a multi-line method call."
