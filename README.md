@@ -17,13 +17,15 @@ programming in style.
 - "Prefer" indicates a better option and its alternative to watch out for.
 - "Use" is a positive instruction.
 
-### Languages
+### Languages and Folders
 
 - [Bash](/bash/)
 - [CSS](/css/)
 - [ERB](/erb/)
+- [Git](/git/)
 - [HTML](/html/)
 - [JavaScript](/javascript/)
 - [Python](/python/)
 - [Rails](/rails/)
+- [React](/react/)
 - [Ruby](/ruby/)
