@@ -5,7 +5,7 @@
 - Avoid ternary operators (`boolean ? true : false`). Use multi-line `if`
   instead to emphasize code branches.
 - Prefer nested class and module definitions over the shorthand version
-  [Example](/ruby/sample_1.rb#L103)
+  [Example](/ruby/sample.rb#L1)
 - Prefer `detect` over `find`.
 - Prefer `select` over `find_all`.
 - Prefer `map` over `collect`.
