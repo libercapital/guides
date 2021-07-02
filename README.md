@@ -20,6 +20,7 @@ programming in style.
 ### Topics
 
 - [Bash](/bash/)
+- [Code Review](/code-review/)
 - [CSS](/css/)
 - [ERB](/erb/)
 - [Git](/git/)
