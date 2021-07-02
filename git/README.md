@@ -85,6 +85,9 @@ Review](/code-review/) guidelines to avoid miscommunication.
 They make comments and ask questions directly on lines of code in the GitHub web
 interface or in the project's chat room.
 
+Prefer to use the code suggestion feature in Github when reviewing pull requests so
+the owner can accept them without losing previous approvals.
+
 For changes which they can make themselves, they check out the branch.
 
 ```console
