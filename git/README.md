@@ -142,3 +142,130 @@ git branch --delete <branch-name>
 ```
 
 [find the pull request]: http://stackoverflow.com/a/17819027
+
+## How we commit
+
+
+**[Presentation](https://docs.google.com/presentation/d/1Ej6kYkBoMOaDFspYK2DFhNc1sN6jpxr4oCKZ-3cqkUU/edit#slide=id.gde0622bef5_0_92)**
+
+### Organization and projects
+
+**[Liber on github](https://github.com/libercapital)**
+  - Main projects:
+    - [guides](https://github.com/libercapital/guides)
+    - [docs](https://github.com/libercapital/docs)
+    - [liber-monolith](https://github.com/libercapital/liber-monolith)
+    - [liber-auth](https://github.com/libercapital/liber-auth)
+    - [liber-sign]()
+    - [liber-id](https://github.com/libercapital/liber-id)
+    - [liber-accounting](https://github.com/libercapital/liber-accounting)
+    - [liber-edi](https://github.com/libercapital/liber-edi)
+    - [snakehole](https://github.com/libercapital/snakehole)/[wormhole](https://github.com/libercapital/wormhole)
+
+
+### workflow
+
+**branchs:**
+- master → produção
+- release → staging
+- feature branch → release
+
+> novas features branchs são criadas a partir da release (não temos a development)
+
+**How we name a branch:**
+
+**_Note:_** *We name branchs in this way to integrate Jira with github*
+
+**E.g:**
+
+```
+  feat/<jira-code>
+  fix/<jira-code>
+  etc...
+```
+
+
+```
+  feat/ATL-42
+  feat/EGYPT-88
+  fix/EGYPT-67
+```
+
+**How we commit**
+
+We mount a commit message using a pattern, this pattern allow us to know what kind of code the commit implements(feature, fix, improvement), integrates with a script to create new releases and let the developers know what the code aggregates:
+
+**E.g:**
+
+``` bash
+  git commit -m "feat(ATL-43): Adds new features"
+```
+
+**These are the Tags the we use:**
+
+```
+  feat:        A new feature
+  fix:         A bug fix
+  improvement: An improvement to a current feature
+  docs:        Documentation only changes
+  style:       Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+  refactor:    A code change that neither fixes a bug nor adds a feature
+  perf:        A code change that improves performance
+  test:        Adding missing tests or correcting existing tests
+  build:       Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+  ci:          Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+  chore:       Other changes that don't modify src or test files
+  revert:      Reverts a previous commit
+```
+
+**Integration with Jira:**
+
+Insert the Jira code between `()` after the tag. This will be used by a script to mount a new release
+
+All the commit messages, PR descriptions and discussions should be done in `portuguese`
+
+### How to open a new Pull Request(PR):**
+
+**About branchs:**
+
+- Feature branch → release (or to an epic/XXX-XX branch when needed);
+
+**Naming a PR:**
+
+Jira code between `[ ]` and a general description about the changes.
+
+**E.g:**
+
+```
+[ATL-235] Nova listagem de títulos para o fornecedor
+
+[EGYPT-67] Endpoint cancelamento antecipação
+```
+
+**PR description:**
+
+- Fill up the template in the PR description with the Jira code and link, this helps us to undertand the code context.
+- Adds other descriptions that you think that can be helpful to other developers.
+
+**PR Approval:**
+
+Automatic Check's:
+  - Circle-CI → tests;
+  - Rubocop → Ruby linter;
+
+Aproves:
+
+2 approval are required to be able to merge your PR into release:
+  - One of them should be done by a developer of your team
+  - Another one can be done by a developer of another team
+  - Some of the approvals should be by a code owner, no matter the team
+
+1 approval is required to be able to merge your PR into master:
+  - Should be done by a code owner
+  - This flow is normally used to merge hot-fix into master
+
+Auto-merger:
+When this is turned on, makes the PR being automatically merged into release branch when passed all the check's
+
+WIP Tag:
+  - This is useful to not run the check's, to notice other developers that you are doing changes to code, and to declare that your code is not able to be merged
