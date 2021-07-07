@@ -148,25 +148,20 @@ git branch --delete <branch-name>
 
 **[Presentation](https://docs.google.com/presentation/d/1Ej6kYkBoMOaDFspYK2DFhNc1sN6jpxr4oCKZ-3cqkUU/edit#slide=id.gde0622bef5_0_92)**
 
-### Organization and projects
-
-**[Liber on github](https://github.com/libercapital)**
-  - Main projects:
-    - [guides](https://github.com/libercapital/guides)
-    - [docs](https://github.com/libercapital/docs)
-    - [liber-monolith](https://github.com/libercapital/liber-monolith)
-    - [liber-auth](https://github.com/libercapital/liber-auth)
-    - [liber-sign]()
-    - [liber-id](https://github.com/libercapital/liber-id)
-    - [liber-accounting](https://github.com/libercapital/liber-accounting)
-    - [liber-edi](https://github.com/libercapital/liber-edi)
-    - [snakehole](https://github.com/libercapital/snakehole)/[wormhole](https://github.com/libercapital/wormhole)
-
+### [Main projects](https://github.com/libercapital)
+  - [docs](https://github.com/libercapital/docs)
+  - [liber-monolith](https://github.com/libercapital/liber-monolith)
+  - [liber-auth](https://github.com/libercapital/liber-auth)
+  - [liber-sign](https://github.com/libercapital/liber-sign)
+  - [liber-id](https://github.com/libercapital/liber-id)
+  - [liber-accounting](https://github.com/libercapital/liber-accounting)
+  - [liber-edi](https://github.com/libercapital/liber-edi)
+  - [snakehole](https://github.com/libercapital/snakehole)
 
 ### workflow
 
 **branchs:**
-- master → produção
+- main → production
 - release → staging
 - feature branch → release
 
@@ -249,23 +244,22 @@ Jira code between `[ ]` and a general description about the changes.
 
 **PR Approval:**
 
-Automatic Check's:
+Automatic Checks:
   - Circle-CI → tests;
   - Rubocop → Ruby linter;
 
 Aproves:
 
-2 approval are required to be able to merge your PR into release:
-  - One of them should be done by a developer of your team
-  - Another one can be done by a developer of another team
-  - Some of the approvals should be by a code owner, no matter the team
+1 approval is required to be able to merge your PR into release:
+  - Should be at least from one code owner
+  - This flow is used to to merge features, improvements and fixes that should be tested in stating environment
 
 1 approval is required to be able to merge your PR into master:
   - Should be done by a code owner
-  - This flow is normally used to merge hot-fix into master
+  - This flow is normally used to merge hot-fixes into master
 
 Auto-merger:
-When this is turned on, makes the PR being automatically merged into release branch when passed all the check's
+When this is turned on, makes the PR being automatically merged into release branch when passed all the checks
 
 WIP Tag:
-  - This is useful to not run the check's, to notice other developers that you are doing changes to code, and to declare that your code is not able to be merged
+  - This is useful to not run the checks, to notice other developers that you are doing changes to code, and to declare that your code is not able to be merged
