@@ -28,7 +28,7 @@
   multiple models.
 - Prefer `private` when indicating scope.
 - Don't use single character variable names inside loops
-- Prefer to use the same variable name (in singular form) inside loops [Example](/ruby/sample.rb#L6)
+- Prefer to use the same variable name (in singular form) inside loops [Example](/ruby/sample.rb#L9)
 
 ## Bundler
 
