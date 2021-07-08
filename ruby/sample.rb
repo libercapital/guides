@@ -1,6 +1,6 @@
 module A
   class B
-    def list_cmyk(index)
+    def list_colors()
       colors = ['cyan', 'magenta', 'yellow', 'key']
 
       colors.each_with_index do |color, index|
