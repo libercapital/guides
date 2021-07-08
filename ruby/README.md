@@ -27,7 +27,7 @@
 - Prefer classes to modules when designing functionality that is shared by
   multiple models.
 - Prefer `private` when indicating scope.
-- Avoid single character for variable names in loops [Example](/ruby/sample.rb#L6)
+- Don't use single character for variable names in loops [Example](/ruby/sample.rb#L6)
 - Prefer keep same variable name in loops but in singular
 
 ## Bundler
