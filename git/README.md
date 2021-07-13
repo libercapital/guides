@@ -143,45 +143,21 @@ git branch --delete <branch-name>
 
 [find the pull request]: http://stackoverflow.com/a/17819027
 
+## Pull Requests (or Merge Requests)
 
-### [Main projects](https://github.com/libercapital)
-  - [docs](https://github.com/libercapital/docs)
-  - [liber-monolith](https://github.com/libercapital/liber-monolith)
-  - [liber-auth](https://github.com/libercapital/liber-auth)
-  - [liber-sign](https://github.com/libercapital/liber-sign)
-  - [liber-id](https://github.com/libercapital/liber-id)
-  - [liber-accounting](https://github.com/libercapital/liber-accounting)
-  - [liber-edi](https://github.com/libercapital/liber-edi)
-  - [snakehole](https://github.com/libercapital/snakehole)
+### Description
 
-### workflow
+- When the change has a JIRA
+  - Add the Jira code and link to the PR description
+- When the change does not have a JIRA
+  - Add all the necessary information to help other developers understand why and how that change was done
 
-**branchs:**
-- main → production
-- release → staging
-- feature branch → release
+### Helpers
 
-> New feature branchs are created from release branch (we don't use development branch)
+**Auto-merger**
 
-**PR description:**
+- When `auto-merge` is enabled, the PR is automatically merged into the destination branch after all the checks are green.
 
-- Fill up the PR description with the Jira code and link when it exists, this helps us to undertand the code context.
-- Adds other descriptions that you think that can be helpful to other developers.
+**WIP Tag**
 
-**PR Approval:**
-
-Aproves:
-
-1 approval is required to be able to merge your PR into release:
-  - Should be at least from one code owner
-  - This flow is used to to merge features, improvements and fixes that should be tested in stating environment
-
-1 approval is required to be able to merge your PR into master:
-  - Should be done by a code owner
-  - This flow is normally used to merge hot-fixes into master
-
-Auto-merger:
-When this is turned on, makes the PR being automatically merged into release branch when passed all the checks
-
-WIP Tag:
-  - This is useful to not run the checks, to notice other developers that you are doing changes to code, and to declare that your code is not able to be merged
+- Place the tag `[WIP]` at the beginning of the title of your PR to let other developers know that this is still a work in progress and avoid an accidental merge.
