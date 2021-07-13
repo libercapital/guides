@@ -40,21 +40,17 @@ Pessoa Jurídica → Legal Person
 ## Translations that you can find in the code that we don't use anymore(except for model names):
 
 ```
-Duplicata → bill, Duplicata
+Duplicata → bill
 
-Nota Fiscal, Documento Fiscal → invoice, Nota Fiscal
+Nota Fiscal, Documento Fiscal → invoice
 
-Fornecedor → Supplier, Payee, Fornecedor
+Fornecedor → Supplier, Payee
 
-Sacado → Payer, Sacado
+Sacado → Payer
 
-Investidor → Investor, Investidor
+Investidor → Investor
 
 Negociação/Venda → negotiation
 
 Oferta → Buy Offer, Offer, Proposta
-
-Pessoa Física → Natural Person
-
-Pessoa Jurídica → Legal Person
 ```
