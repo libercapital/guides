@@ -1,6 +1,6 @@
-# Português → English
+# Portuguese → English
 
-## Translations that we use Today
+## Translations that we use today
 
 | Portuguese                    | English                    |
 | ----------------------------- | -------------------------- |
@@ -10,7 +10,7 @@
 | Sacado                        | Buyer                      |
 | Investidor                    | Funder                     |
 | Negociação/Venda              | Trade                      |
-| Oferta, Proposta              | Buy Order(bid)             |
+| Oferta, Proposta              | Buy Order (bid)            |
 | Emolumento                    | Fee                        |
 | Termo de Cessão               | Invoice Transfer Agreement |
 | Prazo (em Dias úteis)         | Work Days                  |
@@ -21,7 +21,7 @@
 | Pessoa Física                 | Natural Person             |
 | Pessoa Jurídica               | Legal Person               |
 
-## Translations that you can find in the code that we won't use anymore(except for model names):
+## Translations that you can find in the code that we won't use anymore (except for model names):
 
 | Portuguese                    | English          |
 | ----------------------------- | ---------------- |
