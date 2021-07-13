@@ -2,55 +2,33 @@
 
 ## Translations that we use Today
 
-```
-Duplicata, titulo → Invoice
+| Portuguese                    | English                    |
+| ----------------------------- | -------------------------- |
+| Duplicata, Titulo             | Invoice                    |
+| Nota Fiscal, Documento Fiscal | Tax Document               |
+| Fornecedor                    | Vendor                     |
+| Sacado                        | Buyer                      |
+| Investidor                    | Funder                     |
+| Negociação/Venda              | Trade                      |
+| Oferta, Proposta              | Buy Order(bid)             |
+| Emolumento                    | Fee                        |
+| Termo de Cessão               | Invoice Transfer Agreement |
+| Prazo (em Dias úteis)         | Work Days                  |
+| Prazo (em Dias corridos)      | Running Days               |
+| Antecipação                   | Anticipation               |
+| Taxa de Desconto              | Agreed Rate                |
+| Pagamento em atraso           | Payment Overdue            |
+| Pessoa Física                 | Natural Person             |
+| Pessoa Jurídica               | Legal Person               |
 
-Nota Fiscal, Documento Fiscal → Tax Document
+## Translations that you can find in the code that we won't use anymore(except for model names):
 
-Fornecedor → Vendor
-
-Sacado → Buyer
-
-Investidor → Funder
-
-Negociação/Venda → Trade
-
-Oferta → Buy Order(bid)
-
-Emolumento → Fee
-
-Termo de Cessão → Invoice Transfer Agreement
-
-Prazo (em Dias úteis) → Work Days
-
-Prazo (em Dias corridos) → Running Days
-
-Antecipação → Anticipation
-
-Taxa de Desconto → Agreed Rate
-
-Pagamento em atraso → Payment Overdue
-
-Pessoa Física → Natural Person
-
-Pessoa Jurídica → Legal Person
-
-```
-
-## Translations that you can find in the code that we don't use anymore(except for model names):
-
-```
-Duplicata → bill
-
-Nota Fiscal, Documento Fiscal → invoice
-
-Fornecedor → Supplier, Payee
-
-Sacado → Payer
-
-Investidor → Investor
-
-Negociação/Venda → negotiation
-
-Oferta → Buy Offer, Offer, Proposta
-```
+| Portuguese                    | English          |
+| ----------------------------- | ---------------- |
+| Duplicata                     | Bill             |
+| Nota Fiscal, Documento Fiscal | Invoice          |
+| Fornecedor                    | Supplier, Payee  |
+| Sacado                        | Payer            |
+| Investidor                    | Investor         |
+| Negociação/Venda              | Negotiation      |
+| Oferta, Proposta              | Buy Offer, Offer |
