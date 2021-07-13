@@ -142,3 +142,22 @@ git branch --delete <branch-name>
 ```
 
 [find the pull request]: http://stackoverflow.com/a/17819027
+
+## Pull Requests (or Merge Requests)
+
+### Description
+
+- When the change has a JIRA
+  - Add the Jira code and link to the PR description
+- When the change does not have a JIRA
+  - Add all the necessary information to help other developers understand why and how that change was done
+
+### Helpers
+
+**Auto-merger**
+
+- When `auto-merge` is enabled, the PR is automatically merged into the destination branch after all the checks are green.
+
+**WIP Tag**
+
+- Place the tag `[WIP]` at the beginning of the title of your PR to let other developers know that this is still a work in progress and avoid an accidental merge.
