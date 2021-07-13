@@ -19,14 +19,10 @@ programming in style.
 
 ### Topics
 
-- [Bash](/bash/)
 - [Code Review](/code-review/)
-- [CSS](/css/)
-- [ERB](/erb/)
+- [Dictionary](/dictionary/)
 - [Git](/git/)
-- [HTML](/html/)
-- [JavaScript](/javascript/)
+- [Messaging](/messaging/)
 - [Python](/python/)
 - [Rails](/rails/)
-- [React](/react/)
 - [Ruby](/ruby/)
