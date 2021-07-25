@@ -133,6 +133,10 @@ Style/OptionalBooleanParameter:
   Description: 'Use keyword arguments when defining method with boolean argument.'
   Enabled: false
 
+RSpec/MultipleMemoizedHelpers:
+  Description: 'Example group has too many memoized helpers'
+  Enabled: false
+
 #################
 #  ENABLED COPS #
 #################

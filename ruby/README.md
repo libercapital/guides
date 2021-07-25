@@ -61,3 +61,9 @@
 [http api design guide]: https://github.com/interagent/http-api-design
 [feature specs]: https://www.relishapp.com/rspec/rspec-rails/docs/feature-specs/feature-spec
 [request specs]: https://www.relishapp.com/rspec/rspec-rails/docs/request-specs/request-spec
+
+## Rubocop
+
+- Use Liber's [rubocop.yml] when creating a new project.
+
+[rubocop.yml]: https://github.com/libercapital/guides/blob/main/ruby/.rubocop.yml
