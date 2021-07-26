@@ -822,3 +822,7 @@ Style/RedundantFreeze:
 
 Layout/FirstMethodArgumentLineBreak:
   Description: "Checks for a line break before the first argument in a multi-line method call."
+
+Metrics/BlockLength:
+  Description: 'Block has too many lines.'
+  IgnoredMethods: ['describe', 'context', 'define', 'factory', 'namespace']
