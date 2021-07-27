@@ -20,6 +20,7 @@
 | Pagamento em atraso           | Payment Overdue            |
 | Pessoa Física                 | Natural Person             |
 | Pessoa Jurídica               | Legal Person               |
+| Representante Legal           | Legal Agent                |
 
 ## Translations that you can find in the code that we won't use anymore (except for model names):
 
