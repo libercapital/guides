@@ -26,3 +26,4 @@ programming in style.
 - [Python](/python/)
 - [Rails](/rails/)
 - [Ruby](/ruby/)
+- [Sidekiq](/sidekiq/)
