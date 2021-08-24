@@ -25,10 +25,12 @@
 - Use `db/seeds.rb` for data that is required in non production environments.
 - Prefer `cookies.signed` over `cookies` to [prevent tampering].
 - Prefer `Time.zone.parse("2014-07-04 16:05:37")` over `Time.parse("2014-07-04
-  16:05:37")`
+  16:05:37")`.
 - Use `ENV.fetch` for environment variables instead of `ENV[]`so that unset
   environment variables are detected on deploy.
-  
+- Use `includes` when you need to use data from associated tables (eager loading) [Example](/rails/sample.rb#L9)
+- Use `joins` when you need only the associated tables data to some sort of filter (lazy loading) [Example](/rails/sample.rb#L16)
+
 # DDD
 
 - Use `Vendor::LegalDataRepository` instead of `Repository::Vendor::LegalDataRepository`
