@@ -18,7 +18,8 @@
   interpolation.
 - Use `?` suffix for predicate methods.
 - Use `def self.method`, not `class << self`.
-- Use `def` with parentheses when there are arguments.
+- Use `def` with parentheses when there are arguments [Example](/ruby/sample.rb#L14)
+- Avoid `def` with parentheses when there are no arguments [Example](/ruby/sample.rb#L6)
 - Use heredocs for multi-line strings.
 - Order class methods above instance methods.
 - Prefer method invocation over instance variables.
@@ -29,6 +30,7 @@
 - Prefer `private` when indicating scope.
 - Don't use single character variable names inside loops
 - Prefer to use the same variable name (in singular form) inside loops [Example](/ruby/sample.rb#L9)
+- Use `self.class` for log tags [Example](/ruby/sample.rb#L15)
 
 ## Bundler
 
