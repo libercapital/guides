@@ -6,6 +6,7 @@
 | ----------------------------- | -------------------------- |
 | Antecipação                   | Anticipation               |
 | Borderô                       | Bordereau                  |
+| Borderôs                      | Bordereaux                 |
 | Duplicata, Titulo             | Invoice                    |
 | Emolumento                    | Fee                        |
 | Fornecedor                    | Vendor                     |
