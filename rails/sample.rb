@@ -18,3 +18,9 @@ users.each do |user|
   puts "Name: #{user.name}"
   puts "Address: #{user.address}"
 end
+
+# bad
+invoices_ids
+invoices_id
+# good
+invoice_ids
