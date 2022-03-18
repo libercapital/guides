@@ -24,3 +24,29 @@ invoices_ids
 invoices_id
 # good
 invoice_ids
+
+# bad
+module Invoice
+  class TradeRepository
+    def self.orderly(invoice, **options)
+      invoice.vendas
+             .order(created_at: :asc)
+             .includes(:ofertas)
+             .ransack(options)
+             .result
+    end
+  end
+end
+Invoice::TradeRepository.orderly(invoice, prazo_gt: 10)
+# good
+module Invoice
+  class TradeRepository
+    def self.orderly(invoice, **options)
+      invoice.vendas
+             .order(created_at: :asc)
+             .ransack(options)
+             .result
+    end
+  end
+end
+Invoice::TradeRepository.orderly(invoice, prazo_gt: 10).includes(:ofertas)

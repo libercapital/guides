@@ -31,6 +31,7 @@
 - Use `includes` when you need to use data from associated tables (eager loading) [Example](/rails/sample.rb#L9)
 - Use `joins` when you need only the associated tables data to some sort of filter (lazy loading) [Example](/rails/sample.rb#L16)
 - Don't pluralize the first word in a compound variable name [Example](/rails/sample.rb#L22)
+- Avoid using `.includes` inside of repositories. [Example](/rails/sample.rb#L42)
 
 # DDD
 
