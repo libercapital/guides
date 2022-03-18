@@ -2,27 +2,36 @@
 
 ## Translations that we use today
 
-| Portuguese                    | English                    |
-| ----------------------------- | -------------------------- |
-| Antecipação                   | Anticipation               |
-| Borderô                       | Bordereau                  |
-| Borderôs                      | Bordereaux                 |
-| Duplicata, Titulo             | Invoice                    |
-| Emolumento                    | Fee                        |
-| Fornecedor                    | Vendor                     |
-| Investidor                    | Funder                     |
-| Negociação/Venda              | Trade                      |
-| Nota Fiscal, Documento Fiscal | Tax Document               |
-| Oferta, Proposta              | Buy Order (bid)            |
-| Pagamento em atraso           | Payment Overdue            |
-| Pessoa Física                 | Natural Person             |
-| Pessoa Jurídica               | Legal Person               |
-| Prazo (em Dias corridos)      | Running Days               |
-| Prazo (em Dias úteis)         | Work Days                  |
-| Representante Legal           | Legal Agent                |
-| Sacado                        | Buyer                      |
-| Taxa de Desconto              | Agreed Rate                |
-| Termo de Cessão               | Invoice Transfer Agreement |
+All the terms down below are in alphabetical order.
+
+| Portuguese             | English                    |
+| ---------------------- | -------------------------- |
+| Antecipação            | Anticipation               |
+| Borderô                | Bordereau                  |
+| Borderôs               | Bordereaux                 |
+| Caixa Próprio          | Buyer Self Funding         |
+| Documento Fiscal       | Tax Document               |
+| Duplicata              | Invoice                    |
+| Emolumento             | Fee                        |
+| Fornecedor             | Vendor                     |
+| Investidor             | Funder                     |
+| Negociação             | Trade                      |
+| Nota Fiscal            | Tax Document               |
+| Oferta                 | Buy Order (bid)            |
+| Pagamento em atraso    | Payment Overdue            |
+| Pessoa Física          | Natural Person             |
+| Pessoa Jurídica        | Legal Person               |
+| Prazo em dias corridos | Running Days               |
+| Prazo em dias úteis    | Work Days                  |
+| Proposta               | Buy Order (bid)            |
+| Remessa                | Remittance                 |
+| Representante Legal    | Legal Agent                |
+| Sacado                 | Buyer                      |
+| Taxa de Desconto       | Agreed Rate                |
+| Termo da Oferta        | Term                       |
+| Termo de Cessão        | Invoice Transfer Agreement |
+| Titulo                 | Invoice                    |
+| Venda                  | Trade                      |
 
 ## Translations that you can find in the code that we won't use anymore (except for model names):
 
