@@ -9,6 +9,7 @@ All the terms down below are in alphabetical order.
 | Antecipação            | Anticipation               |
 | Borderô                | Bordereau                  |
 | Borderôs               | Bordereaux                 |
+| Caixa Próprio          | Buyer Self Funding         |
 | Documento Fiscal       | Tax Document               |
 | Duplicata              | Invoice                    |
 | Emolumento             | Fee                        |
@@ -23,9 +24,11 @@ All the terms down below are in alphabetical order.
 | Prazo em dias corridos | Running Days               |
 | Prazo em dias úteis    | Work Days                  |
 | Proposta               | Buy Order (bid)            |
+| Remessa                | Remittance                 |
 | Representante Legal    | Legal Agent                |
 | Sacado                 | Buyer                      |
 | Taxa de Desconto       | Agreed Rate                |
+| Termo da Oferta        | Term                       |
 | Termo de Cessão        | Invoice Transfer Agreement |
 | Titulo                 | Invoice                    |
 | Venda                  | Trade                      |
