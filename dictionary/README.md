@@ -26,6 +26,7 @@ All the terms down below are in alphabetical order.
 | Proposta               | Buy Order (bid)            |
 | Remessa                | Remittance                 |
 | Representante Legal    | Legal Agent                |
+| Risco Sacado Reverso   | Reverse Buyer Risk         |
 | Sacado                 | Buyer                      |
 | Taxa de Desconto       | Agreed Rate                |
 | Termo da Oferta        | Term                       |
