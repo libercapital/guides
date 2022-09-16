@@ -10,6 +10,7 @@ All the terms down below are in alphabetical order.
 | Borderô                | Bordereau                  |
 | Borderôs               | Bordereaux                 |
 | Caixa Próprio          | Buyer Self Funding         |
+| Direito creditório     | Credit Right               |
 | Documento Fiscal       | Tax Document               |
 | Duplicata              | Invoice                    |
 | Emolumento             | Fee                        |
