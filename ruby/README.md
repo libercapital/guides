@@ -4,8 +4,7 @@
 - Avoid organizational comments (`# Validations`).
 - Avoid ternary operators (`boolean ? true : false`). Use multi-line `if`
   instead to emphasize code branches.
-- Prefer nested class and module definitions over the shorthand version
-  [Example](/ruby/sample.rb#L1)
+- Prefer nested class and module definitions over the shorthand version. [Example](/ruby/sample.rb#L1)
 - Prefer `detect` over `find`.
 - Prefer `select` over `find_all`.
 - Prefer `map` over `collect`.
@@ -18,8 +17,8 @@
   interpolation.
 - Use `?` suffix for predicate methods.
 - Use `def self.method`, not `class << self`.
-- Use `def` with parentheses when there are arguments [Example](/ruby/sample.rb#L14)
-- Avoid `def` with parentheses when there are no arguments [Example](/ruby/sample.rb#L6)
+- Use `def` with parentheses when there are arguments. [Example](/ruby/sample.rb#L14)
+- Avoid `def` with parentheses when there are no arguments. [Example](/ruby/sample.rb#L6)
 - Use heredocs for multi-line strings.
 - Order class methods above instance methods.
 - Prefer method invocation over instance variables.
@@ -28,9 +27,11 @@
 - Prefer classes to modules when designing functionality that is shared by
   multiple models.
 - Prefer `private` when indicating scope.
-- Don't use single character variable names inside loops
-- Prefer to use the same variable name (in singular form) inside loops [Example](/ruby/sample.rb#L9)
-- Use `self.class` for log tags [Example](/ruby/sample.rb#L15)
+- Don't use single character variable names inside loops.
+- Prefer to use the same variable name (in singular form) inside loops. [Example](/ruby/sample.rb#L9)
+- Use `self.class` for log tags. [Example](/ruby/sample.rb#L15)
+- Prefer using custom exceptions insted of `StandardError` class. [Example](/ruby/sample.rb#L40)
+- Don't use exceptions for control flow. If your exceptions are expectations, you're doing it wrong. [Example](/ruby/sample.rb#L65)
 
 ## Bundler
 
