@@ -25,7 +25,6 @@ invoices_id
 # good
 invoice_ids
 
-
 # bad
 def calculated_rates
   @calculated_rates ||= begin
@@ -54,3 +53,11 @@ def calculate_rates
   response = Rates::CalculatorService.new(invoices, funder, financing_date).call
   response.data
 end
+
+# bad
+params[:page_number]
+params[:per_page]
+
+# good
+params[:page]
+params[:per]

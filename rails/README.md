@@ -31,7 +31,8 @@
 - Use `includes` when you need to use data from associated tables (eager loading) [Example](/rails/sample.rb#L9)
 - Use `joins` when you need only the associated tables data to some sort of filter (lazy loading) [Example](/rails/sample.rb#L16)
 - Don't pluralize the first word in a compound variable name [Example](/rails/sample.rb#L22)
-- For multi-line memoizers, isolate the block in a different method [Example](/rails/sample.rb#L30)
+- For multi-line memoizers, isolate the block in a different method [Example](/rails/sample.rb#L29)
+- Use `page` (page number) and `per` (number of itens per page) for pagination params [Example](/rails/sample.rb#L57)
 
 # DDD
 
